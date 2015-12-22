@@ -8,16 +8,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
-public class MainWindowActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
+    private final String Tag="MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_window);
+        initViews();
+        showMessage();
+
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,7 +32,23 @@ public class MainWindowActivity extends AppCompatActivity {
             }
         });
     }
+    private void initViews(){
+        setContentView(R.layout.activity_main_window);
+    }
 
+    private void showMessage(View view){
+        TextView t = (TextView) findViewById(R.id.test);
+        t.setVisibility(View.VISIBLE);
+    }
+
+
+
+
+
+    /*
+        Delete later
+
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
