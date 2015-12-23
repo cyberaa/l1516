@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initViews();
-        showMessage();
+
 
 
 
@@ -36,10 +36,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_window);
     }
 
-    private void showMessage(View view){
-        TextView t = (TextView) findViewById(R.id.test);
-        t.setVisibility(View.VISIBLE);
-    }
 
 
 
@@ -69,5 +65,13 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showMessage(View view) {
+        TextView t = (TextView) findViewById(R.id.test);
+        if(t.getVisibility() == View.VISIBLE)
+            t.setVisibility(View.INVISIBLE);
+        else
+            t.setVisibility(View.VISIBLE);
     }
 }
